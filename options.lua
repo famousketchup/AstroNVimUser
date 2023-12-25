@@ -1,15 +1,37 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
 return {
   opt = {
-    -- set to true or false etc.
-    relativenumber = true, -- sets vim.opt.relativenumber
-    number = true, -- sets vim.opt.number
-    spell = false, -- sets vim.opt.spell
-    signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-    wrap = false, -- sets vim.opt.wrap
+    relativenumber = false, -- use proper line numbers
+    spell = true, -- use spell-checking
+    wrap = true, -- wrap too long lines
+    textwidth = 72, -- max line lemgth
+    formatoptions = 'cqj', -- don't move text onto new line automatically
+    scrolloff = 3, -- minimal number of lines above the cursor
+    colorcolumn = '+1', -- highlight column after 'textwidth'
+    --foldmethod = 'marker', -- fold by pre-set markers
+    --foldlevelstart = 0, -- Close all folds on file open
+    showmatch = true, -- highlight matching bracket
+    shiftround = true, -- Round indentation, disallow extra spaces
+    softtabstop = 2, -- number of spaces for <tab> in insert mode
+    completeopt = { "menu", "menuone", "preview" }, -- options for insert mode
+    dict = '/usr/share/dict/words', -- Word dictionary for completion
+    spellfile = '~/.config/nvim/en.utf-8.add', -- Custom word spelling file
+    wildmode = { "longest", "list", "full" },
+    wildignore = {
+      ".hg", ".git", ".svn",
+      "lib",
+      "node_modules", "bower_components", "build",
+      "*.jpg", "*.exe", "*.dll", "*.manifest",
+      "*.spl", "*.sw?", "*.pyc", "*.luac",
+      "*.DS_Store", "*.orig"
+    },
+    backupcopy = "yes",
+    undofile = true, -- enable undo file
+    backup = false, -- enable backups
+    --backupdir = '~/.local/state/nvim/backup//', -- don't save just near the file, you boofoonous
   },
   g = {
-    mapleader = " ", -- sets vim.g.mapleader
+    --mapleader = " ", -- sets vim.g.mapleader
     autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
     cmp_enabled = true, -- enable completion at start
     autopairs_enabled = true, -- enable autopairs at start
