@@ -12,7 +12,9 @@ return {
     --foldlevelstart = 0, -- Close all folds on file open
     showmatch = true, -- highlight matching bracket
     shiftround = true, -- Round indentation, disallow extra spaces
+    tabstop = 2,
     softtabstop = 2, -- number of spaces for <tab> in insert mode
+    shiftwidth = 2,
     completeopt = { "menu", "menuone", "preview" }, -- options for insert mode
     dict = '/usr/share/dict/words', -- Word dictionary for completion
     spellfile = '~/.config/nvim/en.utf-8.add', -- Custom word spelling file

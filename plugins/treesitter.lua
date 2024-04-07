@@ -16,7 +16,8 @@ return {
         "json",
         "yaml",
         "css",
-        "html"
+        "html",
+        "pug"
       }
     )
   end,

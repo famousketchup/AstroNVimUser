@@ -72,8 +72,23 @@ return {
     ['<leader>ft'] = {':<C-U>Leaderf bufTag --popup<CR>'},
     ['<leader>fb'] = {':<C-U>Leaderf buffer --popup<CR>'},
     ['<leader>fr'] = {':<C-U>Leaderf mru --popup --absolute-path<CR>'},
+
+    -- Plugin: whitespace
+    ['<leader>rw'] = {
+      function()
+        require('whitespace-nvim').trim()
+      end,
+    },
+
+    ['<leader>sl'] = {':lua require("luasnip.extras.snippet_list").open()<CR>'},
+    -- Plugin: Copilot
+    ["<leader>=s"] = {':Copilot status'},
+    ["<leader>=e"] = {':Copilot enable'},
+    ["<leader>=d"] = {':Copilot disable'},
+    ["<leader>=p"] = {':Copilot panel'}, -- most important
+    ["<leader>=v"] = {':Copilot version'}
   },
-  
+
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,

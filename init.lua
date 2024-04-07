@@ -69,6 +69,14 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    vim.api.nvim_exec([[
+      augroup FileTypeSettings
+        autocmd!
+        autocmd FileType pug setlocal tabstop=2 softtabstop=2 shiftwidth=2
+        autocmd FileType python setlocal tabstop=2 softtabstop=2 shiftwidth=2
+      augroup END
+    ]], false)
+    vim.cmd('let g:python_recommended_style = 0')
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
