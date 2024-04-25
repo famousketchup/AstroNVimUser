@@ -11,8 +11,9 @@ return {
 
     -- No-semicolon colons!!!
     [";"] = {":"},
-    -- No annoying help popups
-    ["<F1>"] = {"<nop>"},
+
+    -- My favorite window mapping
+    [","] = {"<c-w>"},
 
     -- Select the contents of the current line, excluding indentation.
     ["vv"] = {"^vg"},
@@ -33,27 +34,26 @@ return {
 
     -- Split line
     ["S"] = {"i<cr><esc>"},
-    
+
     -- Keep the cursor in place while joining lines
     ["J"] = {"mzJ`z"},
-    
+
     -- Create Blank Newlines and stay in Normal mode
     ["zj"] = {"o<Esc>"},
     ["zk"] = {"O<Esc>"},
-    
-    -- <a-j> and <a-k> to drag lines in any mode
-    ["<a-j>"] = {":m+<CR>"},
-    ["<a-k>"] = {":m-2<CR>"},
+
+    -- <c-j> and <c-k> to drag lines in any mode
+    ["<c-j>"] = {":m+<CR>"},
+    ["<c-k>"] = {":m-2<CR>"},
+
+    -- No annoying help popups
+    ["<F1>"] = {"<nop>"},
 
     -- Paste mode
     ["<leader>y"] = {'"+y'},
     ["<leader>p"] = {':set paste<CR>"+p<CR>:set nopaste<CR>'},
     ["<leader>P"] = {':set paste<CR>"+P<CR>:set nopaste<CR>'},
 
-    -- MY Favorite Window Mapping
-    [","] = {"<c-w>"},
-
-    
     -- *OTHER* --
     ["<leader>bD"] = {
       function()
@@ -64,7 +64,7 @@ return {
       desc = "Pick to close",
     },
     ["<leader>b"] = { name = "Buffers" },
-    
+
     -- Plugin: LeaderF
     ['<leader>ff'] = {':<C-U>Leaderf file --popup<CR>'},
     ['<leader>fg'] = {':<C-U>Leaderf rg --no-messages --popup<CR>'},
@@ -81,6 +81,7 @@ return {
     },
 
     ['<leader>sl'] = {':lua require("luasnip.extras.snippet_list").open()<CR>'},
+
     -- Plugin: Copilot
     ["<leader>=s"] = {':Copilot status'},
     ["<leader>=e"] = {':Copilot enable'},
@@ -93,7 +94,7 @@ return {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
-  
+
   v = {
     -- No-semicolon colons!!!
     [";"] = {":"},
