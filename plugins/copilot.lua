@@ -1,16 +1,17 @@
 return {
-  "github/copilot.vim",
-  cmd = "Copilot",
+  'github/copilot.vim',
+  cmd = 'Copilot',
   lazy = false,
-  opts = function()
+  config = function()
     vim.keymap.set('i', '<C-e>', 'copilot#Accept("<CR>")', {
       expr = true,
       replace_keycodes = false
     })
-    -- vim.g.copilot_no_tab_map = true
+    vim.keymap.set('i', '<C-L>', '<Plug>(copilot-accept-word)')
+    vim.g.copilot_no_tab_map = true
   end,
-  config = function()
-  end,
-  setup = function()
-  end
+  -- opts = function()
+  -- end,
+  -- setup = function()
+  -- end
 }
